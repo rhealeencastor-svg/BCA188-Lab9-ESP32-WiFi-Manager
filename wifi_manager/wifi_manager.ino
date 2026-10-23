@@ -3,8 +3,6 @@
 
 const char* AP_SSID = "BCA188-ESP32-XX";
 const int RESET_BUTTON_PIN = 0;
-const int BUTTON_PIN = 4;
-const int LED_PIN = 2;
 
 WiFiManager wm;
 unsigned long pressStarted = 0;
@@ -12,7 +10,7 @@ bool holding = false;
 bool connected = false;
 
 bool buttonPressed() {
-  return digitalRead(RESET_BUTTON_PIN) == LOW || digitalRead(BUTTON_PIN) == LOW;
+  return digitalRead(RESET_BUTTON_PIN) == LOW;
 }
 
 void portalStarted(WiFiManager* manager) {
@@ -31,9 +29,6 @@ void portalTimedOut() {
 void setup() {
   Serial.begin(115200);
   pinMode(RESET_BUTTON_PIN, INPUT_PULLUP);
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
-  pinMode(LED_PIN, OUTPUT);
-  digitalWrite(LED_PIN, LOW);
   delay(1000);
 
   WiFi.mode(WIFI_STA);
@@ -70,7 +65,6 @@ void loop() {
 
   wm.process();
   bool online = WiFi.status() == WL_CONNECTED;
-  digitalWrite(LED_PIN, online ? HIGH : (millis() / 500) % 2);
 
   if (online && !connected) {
     Serial.println("Connected to Wi-Fi");

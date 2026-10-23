@@ -10,7 +10,7 @@ Configure ESP32 Wi-Fi using a phone. Hold BOOT for 3 seconds, then release it, t
 
 1. Install **esp32 by Espressif Systems** in Arduino IDE Boards Manager and **WiFiManager by tzapu** in Library Manager.
 2. Open [wifi_manager.ino](wifi_manager/wifi_manager.ino). Select your ESP32 board and USB port.
-3. The code uses `BCA188-ESP32-XX` as its setup network. Replace `XX` if your instructor assigned a number.
+3. Replace `XX` in `AP_SSID` with your assigned number, for example `BCA188-ESP32-07`. This is the ESP32 setup name, separate from your home Wi-Fi name.
 4. Upload and open Serial Monitor at **115200 baud**. If uploads fail at high speed, set **Tools > Upload Speed > 115200**.
 5. Connect your phone to **BCA188-ESP32-XX**. Stay connected even if it says there is no internet.
 6. Open **http://192.168.4.1**, choose **Configure WiFi**, select your home network, enter its password, and save.
@@ -18,14 +18,16 @@ Configure ESP32 Wi-Fi using a phone. Hold BOOT for 3 seconds, then release it, t
 
 Use a **2.4 GHz** Wi-Fi network or hotspot. Saved credentials reconnect automatically after restart. To reopen setup, let the board start, hold BOOT for 3 seconds, then release it.
 
-## Materials and pins
+## Materials
 
-- ESP32 WROOM-32 development board, USB data cable, phone, and Wi-Fi network.
-- BOOT: built-in button on GPIO0; no extra wire needed.
-- Optional pushbutton: GPIO4 to GND when pressed.
-- Status LED: GPIO2. If your board has no LED there, use GPIO2 to a 220-ohm resistor to the LED's long leg; connect its short leg to GND. It blinks during setup and stays on when connected.
+- ESP32 board and USB data cable
+- Computer with Arduino IDE, ESP32 board support, and WiFiManager by tzapu
+- Phone
+- Two 2.4 GHz Wi-Fi networks, such as a home router and a phone hotspot
 
-Unplug USB before wiring. The OLED and UART/SPI jumpers from Lab 8 are not needed. The pin settings target the WROOM-32 board; check the pinout before using another ESP32 model.
+No additional wiring is needed. With USB unplugged, disconnect the Lab 8 OLED and loopback jumpers before starting. The reset shortcut uses the built-in BOOT button on GPIO0 of the WROOM-32 board used in Lab 8.
+
+The sketch sets `wm.setConfigPortalTimeout(180)` before `wm.autoConnect()`. Its timeout callback calls `ESP.restart()` to restart the board if setup is not completed.
 
 ## Results
 
@@ -34,7 +36,7 @@ Unplug USB before wiring. The OLED and UART/SPI jumpers from Lab 8 are not neede
 | Wrong password | Connection fails; setup remains available until the 180-second portal timeout, then the board restarts. | To be recorded |
 | Reset settings | Holding BOOT for 3 seconds and releasing it clears credentials and reopens setup. | To be recorded |
 | Change the name | Change `AP_SSID`, upload, then reset saved Wi-Fi to see the new setup name. | To be recorded |
-| Different network | Reset saved Wi-Fi and enter another network or hotspot through the portal; a new IP appears. | To be recorded |
+| Different network | Reset saved Wi-Fi and enter another network or hotspot through the portal; the second network SSID and assigned IP appear. | To be recorded |
 
 ## Documentation
 
