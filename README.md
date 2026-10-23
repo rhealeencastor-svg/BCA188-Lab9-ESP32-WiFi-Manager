@@ -1,6 +1,6 @@
 # Laboratory Activity 9: ESP32 Wi-Fi Manager
 
-**Rhea Leen Castor**
+**Rhea Leen P. Castor**
 
 **Assigned number: 2802**
 
