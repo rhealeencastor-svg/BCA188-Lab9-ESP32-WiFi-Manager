@@ -2,57 +2,55 @@
 
 **Rhea Leen Castor**
 
+**Assigned number: 2802**
+
 BCA188 - Programming For Internet of Things
 
-Configure ESP32 Wi-Fi using a phone. Hold BOOT for 3 seconds, then release it, to clear saved Wi-Fi and restart setup.
-
-## Setup
-
-1. Install **esp32 by Espressif Systems** in Arduino IDE Boards Manager and **WiFiManager by tzapu** in Library Manager.
-2. Open [wifi_manager.ino](wifi_manager/wifi_manager.ino). Select your ESP32 board and USB port.
-3. Replace `XX` in `AP_SSID` with your assigned number, for example `BCA188-ESP32-07`. This is the ESP32 setup name, separate from your home Wi-Fi name.
-4. Upload and open Serial Monitor at **115200 baud**. If uploads fail at high speed, set **Tools > Upload Speed > 115200**.
-5. Connect your phone to **BCA188-ESP32-XX**. Stay connected even if it says there is no internet.
-6. Open **http://192.168.4.1**, choose **Configure WiFi**, select your home network, enter its password, and save.
-7. Record the SSID, IP address, and RSSI shown in Serial Monitor.
-
-Use a **2.4 GHz** Wi-Fi network or hotspot. Saved credentials reconnect automatically after restart. To reopen setup, let the board start, hold BOOT for 3 seconds, then release it.
+This is my Wi-Fi Manager project for the ESP32. It uses a phone setup page to enter Wi-Fi details instead of putting the network name and password in the code.
 
 ## Materials
 
-- ESP32 board and USB data cable
+- ESP32 WROOM-32 board and USB data cable
 - Computer with Arduino IDE, ESP32 board support, and WiFiManager by tzapu
 - Phone
 - Two 2.4 GHz Wi-Fi networks, such as a home router and a phone hotspot
 
-No additional wiring is needed. With USB unplugged, disconnect the Lab 8 OLED and loopback jumpers before starting. The reset shortcut uses the built-in BOOT button on GPIO0 of the WROOM-32 board used in Lab 8.
+## My setup
 
-The sketch sets `wm.setConfigPortalTimeout(180)` before `wm.autoConnect()`. Its timeout callback calls `ESP.restart()` to restart the board if setup is not completed.
+My code is in [wifi_manager.ino](wifi_manager/wifi_manager.ino). I set the setup network name to **BCA188-ESP32-2802** and the Serial Monitor baud rate to **115200**.
+
+When saved Wi-Fi is unavailable, the ESP32 opens its setup network. The setup page is at **http://192.168.4.1**, where I can choose a Wi-Fi network and enter its password using my phone.
+
+The portal timeout is **180 seconds**. The code restarts the ESP32 if setup is not completed before the timeout. The built-in BOOT button on GPIO0 clears saved Wi-Fi after a 3-second hold and restarts the board when released, so I can set up another network without reprogramming.
+
+The project only needs the ESP32 connected through USB. No extra wiring is used. Serial Monitor shows the connected network's SSID, IP address, and RSSI.
 
 ## Results
 
+My test observations have not been recorded yet.
+
 | Test | Expected | Observed |
 |---|---|---|
-| Wrong password | Connection fails; setup remains available until the 180-second portal timeout, then the board restarts. | To be recorded |
-| Reset settings | Holding BOOT for 3 seconds and releasing it clears credentials and reopens setup. | To be recorded |
-| Change the name | Change `AP_SSID`, upload, then reset saved Wi-Fi to see the new setup name. | To be recorded |
-| Different network | Reset saved Wi-Fi and enter another network or hotspot through the portal; the second network SSID and assigned IP appear. | To be recorded |
+| Wrong password | Connection fails; the portal stays available until the timeout, then the board restarts. | Not yet recorded |
+| Reset settings | A 3-second BOOT hold and release clears credentials and reopens setup. | Not yet recorded |
+| Change the name | The updated setup name appears after changing AP_SSID, uploading, and clearing saved Wi-Fi. | Not yet recorded |
+| Different network | The ESP32 connects to another network through the portal and shows its SSID and assigned IP. | Not yet recorded |
 
 ## Documentation
 
-Upload your evidence to [documentation](documentation/). Add the photo or video links below after testing.
+My screenshots, photos, and test videos will be in [documentation](documentation/).
 
-| Evidence | Photo or video |
+| Evidence | Status |
 |---|---|
-| Setup page on phone | To be uploaded |
-| Connected state, SSID, IP, and RSSI | To be uploaded |
-| Wrong-password test | To be uploaded |
-| BOOT reset test | To be uploaded |
-| Changed setup network name | To be uploaded |
-| Connection to another network or hotspot | To be uploaded |
+| Setup page on my phone | Pending upload |
+| Serial Monitor showing SSID, IP, and RSSI | Pending upload |
+| Wrong-password test | Pending upload |
+| BOOT reset test | Pending upload |
+| Changed setup network name | Pending upload |
+| Connection to another network or hotspot | Pending upload |
 
 ## Explanation
 
-WiFiManager saves the network credentials in the ESP32's flash memory after setup. This lets the board connect to a different Wi-Fi network through the phone's setup page without changing the network name or password in the code.
+WiFiManager saves Wi-Fi credentials in the ESP32's flash memory. This lets me switch networks through the phone setup page without changing the network details in my code.
 
 Reference activity: [Lab 9 example](https://github.com/mccdz1/BCA188-Lab9-ESP32-WiFi-Manager). Library: [WiFiManager](https://github.com/tzapu/WiFiManager).

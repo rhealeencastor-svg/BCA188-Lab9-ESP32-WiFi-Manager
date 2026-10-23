@@ -1,7 +1,7 @@
 #include <WiFi.h>
 #include <WiFiManager.h>
 
-const char* AP_SSID = "BCA188-ESP32-XX";
+const char* AP_SSID = "BCA188-ESP32-2802";
 const int RESET_BUTTON_PIN = 0;
 
 WiFiManager wm;
