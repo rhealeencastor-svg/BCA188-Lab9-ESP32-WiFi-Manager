@@ -58,3 +58,4 @@ Reference activity: [Lab 9 example](https://github.com/mccdz1/BCA188-Lab9-ESP32-
 ## PROOF OF MOLE UNABLE TO OPEN:
 <img width="1512" height="982" alt="Screenshot 2026-10-23 at 11 56 19 PM" src="https://github.com/user-attachments/assets/e2c17099-0a75-48e0-a96e-b1c76d24ac44" />
 
+<img width="922" height="2049" alt="image" src="https://github.com/user-attachments/assets/efad051e-1daa-4a93-a1eb-f65a58cd6476" />
