@@ -54,3 +54,7 @@ My screenshots, photos, and test videos will be in [documentation](documentation
 WiFiManager saves Wi-Fi credentials in the ESP32's flash memory. This lets me switch networks through the phone setup page without changing the network details in my code.
 
 Reference activity: [Lab 9 example](https://github.com/mccdz1/BCA188-Lab9-ESP32-WiFi-Manager). Library: [WiFiManager](https://github.com/tzapu/WiFiManager).
+
+## PROOF OF MOLE UNABLE TO OPEN:
+<img width="1512" height="982" alt="Screenshot 2026-10-23 at 11 56 19 PM" src="https://github.com/user-attachments/assets/e2c17099-0a75-48e0-a96e-b1c76d24ac44" />
+
