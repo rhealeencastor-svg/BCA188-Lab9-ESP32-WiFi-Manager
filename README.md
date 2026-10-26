@@ -120,7 +120,7 @@ The ESP32 connected successfully to **PLDTHOMEFIBRThR6w** with IP **192.168.1.80
 
 WiFiManager saves Wi-Fi credentials in the ESP32's flash memory. I cleared the saved settings and entered the second network's details through the setup portal, so I did not need to change the Wi-Fi name or password in my code.
 
-Reference activity: [Lab 9 example](https://github.com/mccdz1/BCA188-Lab9-ESP32-WiFi-Manager). Library: [WiFiManager](https://github.com/tzapu/WiFiManager).
+Library: [WiFiManager](https://github.com/tzapu/WiFiManager).
 
 ## MOLE access issues
 
