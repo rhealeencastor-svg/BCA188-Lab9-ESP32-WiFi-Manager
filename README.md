@@ -45,6 +45,10 @@ My test observations have not been recorded yet.
 
 <img width="1624" height="1061" alt="image" src="https://github.com/user-attachments/assets/068f738b-08c4-48ff-ae6c-ab3bffe848c8" />
 
+<img width="1624" height="1061" alt="image" src="https://github.com/user-attachments/assets/eeefceea-9c97-406d-9a28-4ecde71956f4" />
+
+<img width="1624" height="1061" alt="image" src="https://github.com/user-attachments/assets/75e010c1-76c7-44df-9158-7b11fa086a58" />
+
 My screenshots, photos, and test videos will be in [documentation](documentation/).
 
 | Evidence | Status |
