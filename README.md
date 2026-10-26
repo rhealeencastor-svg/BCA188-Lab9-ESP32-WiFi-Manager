@@ -36,17 +36,19 @@ Both connections received the same local IP address. The SSIDs in Serial Monitor
 | Setup portal | BCA188-ESP32-2802 opened at 192.168.4.1. |
 | Reset settings | Serial Monitor showed SETTINGS ERASED, a software reset, and the setup portal opening again. |
 | Different network | I connected to PLDTHOMEFIBRThR6w after Hidden_Network using the same sketch. |
-| Wrong password | Separate test evidence not yet uploaded. |
-| Change the setup name | BCA188-ESP32-2802 is confirmed in the code and startup output; a separate rename test is not yet documented. |
 
-The timeout is configured in the code, but I have not included a recording of the full 180-second timeout. My phone setup-page screenshot and test videos are also not uploaded yet.
+My phone screenshots show the setup network, portal home page, and second network selected with the password masked. My recordings show the first connection and the saved settings being erased.
 
 ## Documentation
 
-My original screenshots are saved in [documentation](documentation/).
+My screenshots, setup photo, and recordings are saved in [documentation](documentation/).
 
 <details>
-<summary>1. WiFiManager library setup</summary>
+<summary>1. ESP32 setup and WiFiManager library</summary>
+
+I used the ESP32 with its USB cable. The breadboard was just holding the board; no external wiring was needed.
+
+![My ESP32 connected by USB for Lab 9](documentation/esp32-usb-setup.jpg)
 
 I located **WiFiManager by tzapu** in Library Manager, then installed version **2.0.17**.
 
@@ -63,6 +65,12 @@ Serial Monitor shows **BCA188-ESP32-2802** and **192.168.4.1**, followed by the 
 
 ![ESP32 setup network BCA188-ESP32-2802 and portal address 192.168.4.1](documentation/portal-startup.png)
 
+My phone listed **BCA188-ESP32-2802** as an available network. I then opened the WiFiManager home page.
+
+<img src="documentation/phone-setup-network.jpg" alt="Phone Wi-Fi settings showing BCA188-ESP32-2802 available" width="300">
+
+<img src="documentation/phone-portal-home.jpg" alt="WiFiManager home page for BCA188-ESP32-2802" width="300">
+
 </details>
 
 <details>
@@ -71,6 +79,12 @@ Serial Monitor shows **BCA188-ESP32-2802** and **192.168.4.1**, followed by the 
 The ESP32 connected successfully to **Hidden_Network** with IP **192.168.1.80** and RSSI **-69 dBm**.
 
 ![First Wi-Fi connection to Hidden_Network with IP 192.168.1.80 and RSSI -69 dBm](documentation/network-hidden.png)
+
+My **13-second recording** shows the successful connection and assigned IP address.
+
+https://github.com/user-attachments/assets/5a5ebaef-3d68-4f12-9025-9eb04513f421
+
+[Download the first connection recording](documentation/first-network-demo.mp4)
 
 </details>
 
@@ -81,10 +95,20 @@ The log shows **resetSettings**, **SETTINGS ERASED**, and a software reset. Afte
 
 ![Saved Wi-Fi settings erased followed by ESP32 restart and setup portal](documentation/settings-reset.png)
 
+My **22-second recording** shows the saved settings being erased and the setup portal reopening.
+
+https://github.com/user-attachments/assets/e760d945-739b-4294-83ec-b6b0d691b2d9
+
+[Download the settings reset recording](documentation/reset-settings-demo.mp4)
+
 </details>
 
 <details>
 <summary>5. Second network — PLDTHOMEFIBRThR6w</summary>
+
+I selected **PLDTHOMEFIBRThR6w** in the phone portal. The password is masked in this screenshot.
+
+<img src="documentation/phone-second-network.jpg" alt="Phone portal with PLDTHOMEFIBRThR6w selected and its password masked" width="300">
 
 The ESP32 connected successfully to **PLDTHOMEFIBRThR6w** with IP **192.168.1.80** and RSSI **-64 dBm**.
 
