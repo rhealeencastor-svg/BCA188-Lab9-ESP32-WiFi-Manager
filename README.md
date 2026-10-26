@@ -37,6 +37,13 @@ My test observations have not been recorded yet.
 | Different network | The ESP32 connects to another network through the portal and shows its SSID and assigned IP. | Not yet recorded |
 
 ## Documentation
+<img width="1624" height="1061" alt="image" src="https://github.com/user-attachments/assets/27ea59db-34e4-42a0-ad02-035b543e2297" />
+
+<img width="1624" height="1061" alt="image" src="https://github.com/user-attachments/assets/03f491ed-f5d8-4700-b098-48ae15bbac1a" />
+
+<img width="1624" height="1061" alt="image" src="https://github.com/user-attachments/assets/23073e3c-edb7-43d7-870e-2d53b6c5ae4c" />
+
+<img width="1624" height="1061" alt="image" src="https://github.com/user-attachments/assets/068f738b-08c4-48ff-ae6c-ab3bffe848c8" />
 
 My screenshots, photos, and test videos will be in [documentation](documentation/).
 
